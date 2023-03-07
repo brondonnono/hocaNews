@@ -1,0 +1,7 @@
+{
+  "name": "hocaFood",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
