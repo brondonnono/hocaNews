@@ -9,6 +9,18 @@ const routes: Routes = [
   {
     path: 'news',
     loadChildren: () => import('./news/news.module').then( m => m.NewsPageModule)
+  },
+  {
+    path: 'visualize',
+    loadChildren: () => import('./visualize/visualize.module').then( m => m.VisualizePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./auth/signup/signup.module').then( m => m.SignupPageModule)
   }
 ];
 @NgModule({
