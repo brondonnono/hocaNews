@@ -1,29 +1,31 @@
 export interface Organisation {
-    name: string;
     code: string;
+    name: string;
     created_at: string;
     updated_at: string;
 }
 
 export interface Organisation_rules {
- title: string;
- image_url: string;
- created_at: string;
- updated_at: string; 
+    id: string;
+    title: string;
+    image_url: string;
+    created_at: string;
+    updated_at: string; 
 }
 
 export interface Member {
-    name: string;
     id: string;
+    name: string;
     gender: string;
     organisation_code: string;
     function: string;
     created_at: string;
     updated_at: string;
 }
+
 export interface Activity {
-    title: string;
     id: string;
+    title: string;
     date: string;
     description: string;
     organisation_code: string;
@@ -31,6 +33,7 @@ export interface Activity {
     created_at: string;
     updated_at: string;
 }
+
 export interface News {
     id: string;
     title: string;
@@ -41,6 +44,7 @@ export interface News {
     created_at: string;
     updated_at: string;
 }
+
 export interface Cotisation_order {
     id: string;
     title: string;
