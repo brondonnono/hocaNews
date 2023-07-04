@@ -27,9 +27,20 @@ export interface Activity {
     id: string;
     title: string;
     date: string;
+    timeStart: string;
+    timeEnd: string;
+    location: string;
     description: string;
     organisation_code: string;
     initiator_user_id: string;
+    created_at: string;
+    updated_at: string;
+}
+
+export interface Program {
+    id: string;
+    date: string;
+    listActivities: Activity[];
     created_at: string;
     updated_at: string;
 }
