@@ -1,18 +1,4 @@
-<ion-header [translucent]="true" mode="ios">
-  <ion-toolbar>
-    <ion-title>
-      Programme de la semaine
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Programme de la semaine</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-list #activityList [hidden]="!showActivity">
     <ion-item-group *ngFor="let program of programs">
       <ion-item-divider sticky>
@@ -22,7 +8,7 @@
       </ion-item-divider>
 
       <ion-item-sliding *ngFor="let activity of program.listActivities">
-        <ion-item routerLink="/app/tabs/schedule/activity/{{activity.id}}">
+        <ion-item routerLink="/app/tabs/tab1/activity/{{activity.id}}">
           <ion-label>
             <h3>{{activity.title}}</h3>
             <p>

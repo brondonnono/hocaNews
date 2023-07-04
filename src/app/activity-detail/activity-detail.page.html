@@ -1,9 +1,19 @@
-<ion-header>
+<ion-header mode="ios">
   <ion-toolbar>
-    <ion-title>activityDetail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Détail de l'activité </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="activity" class="ion-padding">
+    <h1>{{activity.title}}</h1>
+    <ion-text color="medium">
+      {{activity.timeStart}} &ndash; {{activity.timeEnd}}
+      <br /> {{activity.location}}
+    </ion-text>
+    <p>{{activity.description}}</p>
+  </div>
 </ion-content>
