@@ -19,6 +19,11 @@
             <label class="text-yellow bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'En attente'">({{hasReceive(memberData.id, tontine)}})</label>
         </ion-item>
     </ion-list>
+
+    <ion-button class="mt-5" mode="ios" color="danger" expand="block" shape="round" (click)="logout()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <label>Déconnexion</label>
+    </ion-button>
 </ion-content>
 <ion-content [fullscreen]="true" class="ion-padding" *ngIf="!memberData">
     <div class="text-center">

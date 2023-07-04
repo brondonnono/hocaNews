@@ -98,6 +98,9 @@ export class Tab3Page {
    return cotisation.member_orders.findIndex((idmember: string) => idmember == memberId) + 1;
   }
 
+  logout() {
+  }
+
   hasReceive(memberId: string, cotisation: Cotisation) {
     let res = '';
     if (cotisation.currentPosition != -1) {
