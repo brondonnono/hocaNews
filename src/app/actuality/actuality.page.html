@@ -1,0 +1,19 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Détail de l'activité </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="actuality" class="ion-padding">
+    <ion-img [src]="actuality.img"></ion-img>
+    <h1>{{actuality.title}}</h1>
+    <ion-text color="medium">
+      {{dateParser.parseToLocalFr(dateParser.getFormattedDate(actuality.endDate), 'short')}}
+    </ion-text>
+    <p>{{actuality.description}}</p>
+  </div>
+</ion-content>

@@ -9,7 +9,7 @@ import { Activity } from '../models/models';
 })
 export class ActivityDetailPage {
 
-  defaultHref = '';
+  defaultHref = '/app/tabs/tab1';
   activity: any;
 
   constructor(
@@ -37,7 +37,6 @@ export class ActivityDetailPage {
       created_at: 'string',
       updated_at: 'string'
     }
-    activity_tmp.id = activityId;
     return activity_tmp;
   }
 }

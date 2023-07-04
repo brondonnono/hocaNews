@@ -48,7 +48,12 @@ const routes: Routes = [
           {
             path: '',
             component: NewsPage
-          }
+          },
+          {
+            path: 'actuality/:actualityId',
+            loadChildren: () => import('../actuality/actuality.module').then( m => m.ActualityPageModule)
+          },
+        
         ]
       },
       {

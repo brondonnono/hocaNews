@@ -2,7 +2,7 @@
     <ion-searchbar></ion-searchbar>
     <ion-grid *ngIf="actualities.length > 0">
         <ion-row>
-            <ion-col size="6" *ngFor="let actuality of actualities">
+            <ion-col size="6" *ngFor="let actuality of actualities" routerLink="/app/tabs/news/actuality/{{actuality.id}}">
                 <ion-card mode="ios">
                     <ion-card-header>
                         <ion-img src="assets/icon/favicon.png" title="Actualite image" alt="Actualite image"></ion-img>

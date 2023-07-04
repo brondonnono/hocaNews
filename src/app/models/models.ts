@@ -48,6 +48,7 @@ export interface Program {
 export interface News {
     id: string;
     title: string;
+    img: string;
     endDate: string;
     description: string;
     organisation_code: string;
