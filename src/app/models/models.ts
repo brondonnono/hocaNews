@@ -15,6 +15,7 @@ export interface Organisation_rules {
 
 export interface Member {
     id: string;
+    userId: string;
     name: string;
     gender: string;
     organisation_code: string;
@@ -57,10 +58,12 @@ export interface News {
     updated_at: string;
 }
 
-export interface Cotisation_order {
+export interface Cotisation {
     id: string;
     title: string;
+    member_orders: string[];
     organisation_code: string;
+    currentPosition: number;
     initiator_user_id: string;
     created_at: string;
     updated_at: string;

@@ -1,19 +1,28 @@
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding" *ngIf="memberData">
     <div class="text-center">
         <ion-img src="assets/profil.png" alt="Avatar"></ion-img>
     </div>
     
     <ion-list>
         <ion-list-header>Informations personnelles</ion-list-header>
-        <ion-item>Nom :</ion-item>
-        <ion-item>Genre :</ion-item>
-        <ion-item>Organisation code :</ion-item>
-        <ion-item>Fonction / Poste :</ion-item>
+        <ion-item>Nom : {{memberData.name}}</ion-item>
+        <ion-item>Genre : {{memberData.gender}}</ion-item>
+        <ion-item>Organisation code : {{memberData.organisation_code}}</ion-item>
+        <ion-item>Fonction / Poste : {{memberData.function}}</ion-item>
     </ion-list>
 
     <ion-list class="pt-5">
         <ion-list-header>Position et état dans les tontines</ion-list-header>
-        <ion-item>Tontine de 5000 : N°</ion-item>
-        <ion-item>Présence : </ion-item>
+        <ion-item *ngFor="let tontine of memberCotisations">
+            {{tontine.title}} : N° {{getMemberPosition(memberData.id, tontine)}} &nbsp;
+            <label class="text-green bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'Reçu'">({{hasReceive(memberData.id, tontine)}})</label>
+            <label class="text-yellow bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'En attente'">({{hasReceive(memberData.id, tontine)}})</label>
+        </ion-item>
     </ion-list>
+</ion-content>
+<ion-content [fullscreen]="true" class="ion-padding" *ngIf="!memberData">
+    <div class="text-center">
+        <ion-img src="assets/profil.png" alt="Avatar"></ion-img>
+    </div>
+    <ion-title>Chargement en cours...</ion-title>
 </ion-content>
