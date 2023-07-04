@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { Tab1Page } from '../tab1/tab1.page';
+import { Tab2Page } from '../tab2/tab2.page';
+import { Tab3Page } from '../tab3/tab3.page';
+import { NewsPage } from '../news/news.page';
 
 const routes: Routes = [
   {
@@ -9,19 +13,43 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        children: [
+          {
+            path: '',
+            component: Tab1Page
+          },
+          {
+            path: 'activity/:activityId',
+            loadChildren: () => import('../activity-detail/activity-detail.module').then(m => m.ActivityDetailPageModule)
+          }
+        ]
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        children: [
+          {
+            path: '',
+            component: Tab2Page
+          }
+        ]
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        children: [
+          {
+            path: '',
+            component: Tab3Page
+          }
+        ]
       },
       {
         path: 'news',
-        loadChildren: () => import('../news/news.module').then(m => m.NewsPageModule)
+        children: [
+          {
+            path: '',
+            component: NewsPage
+          }
+        ]
       },
       {
         path: '',
