@@ -21,7 +21,6 @@ export class ActivityDetailPage {
     const activityId = this.route.snapshot.paramMap.get('activityId');
     if (activityId != null) this.activity = this.getActivity(activityId);
     else this.router.navigate(['/tab1']);
-    console.log(activityId);
   }
 
   getActivity(activityId: string): Activity {
