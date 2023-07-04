@@ -9,16 +9,17 @@ export class AppComponent {
 
   public appPages: any = [];
   
-  constructor() {}
+  constructor() {
+    this.setMenuItem();
+  }
 
   public setMenuItem(): any[] {
     return this.appPages = [
       { title: 'Programme', url: '/app/tabs/tab1', icon: 'calendar' },
-      { title: 'history', url: '/history', icon: 'book' },
-      { title: 'Actualités', url: '/app/tabs/news', icon: 'news' },
+      { title: 'Actualités', url: '/app/tabs/news', icon: 'newspaper' },
       { title: 'Mes états', url: '/app/tabs/tab2', icon: 'bar-chart' },
-      { title: 'Statut de l\'association', url: '/status', icon: 'info' },
-      { title: 'A propos', url: '/about', icon: 'infos' },
+      { title: 'Statut de l\'association', url: '/status', icon: 'journal' },
+      { title: 'A propos', url: '/about', icon: 'information-circle' },
     ];
   }
 }
