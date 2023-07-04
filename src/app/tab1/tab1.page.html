@@ -17,11 +17,11 @@
     <ion-item-group *ngFor="let program of programs">
       <ion-item-divider sticky>
         <ion-label>
-          {{dateParser.parseToLocalStringFR(dateParser.getFormattedDate(program.date))}}
+          {{dateParser.parseToLocalFr(dateParser.getFormattedDate(program.date), 'short')}}
         </ion-label>
       </ion-item-divider>
 
-      <ion-item-sliding *ngFor="let activity of program.listActivities" #slidingItem>
+      <ion-item-sliding *ngFor="let activity of program.listActivities">
         <ion-item routerLink="/app/tabs/schedule/activity/{{activity.id}}">
           <ion-label>
             <h3>{{activity.title}}</h3>

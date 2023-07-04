@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 const options: any = { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' };
+const shortOptions: any = { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' };
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,8 @@ export class DateParserService {
   months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôut', 'Sep', 'Oct', 'Nov', 'Déc'];
   days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
-  public parseToLocalFr(date: Date): string {
+  public parseToLocalFr(date: Date, type: string): string {
+    if (type == 'short') return date.toLocaleDateString('fr-FR', shortOptions);
     return date.toLocaleDateString('fr-FR', options);
   }
 
