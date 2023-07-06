@@ -8,5 +8,9 @@
 </ion-header>
 
 <ion-content>
-
+  <app-bank *ngIf="contentRef === 'bank'"></app-bank>
+  <app-order *ngIf="contentRef === 'order'"></app-order>
+  <app-state *ngIf="contentRef === 'state'"></app-state>
+  <app-presence *ngIf="contentRef === 'presence'"></app-presence>
+  <app-fond *ngIf="contentRef === 'fond'"></app-fond>
 </ion-content>
