@@ -14,7 +14,7 @@
     <ion-list class="pt-5">
         <ion-list-header>Position et état dans les tontines</ion-list-header>
         <ion-item *ngFor="let tontine of memberCotisations">
-            {{tontine.title}} : N° {{getMemberPosition(memberData.id, tontine)}} &nbsp;
+            <h6>{{tontine.title}} : N°{{getMemberPosition(memberData.id, tontine)}}</h6> &nbsp;
             <ion-label color="success" class="bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'Reçu'">({{hasReceive(memberData.id, tontine)}})</ion-label>
             <ion-label color="danger" class="bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'En attente'">({{hasReceive(memberData.id, tontine)}})</ion-label>
         </ion-item>
