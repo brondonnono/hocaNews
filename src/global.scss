@@ -26,6 +26,65 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+/* personal font declaration and import */
+@font-face {
+    font-family: "codePro-Black";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Black.ttf');
+}
+@font-face {
+    font-family: "codePro-BlackItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-BlackItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Bold";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Bold.ttf');
+}
+@font-face {
+    font-family: "codePro-BoldItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-BoldItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-ExtraLight";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-ExtraLight.ttf');
+}
+@font-face {
+    font-family: "codePro-ExtraLightItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-ExtraLightItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Italic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Italic.ttf');
+}
+@font-face {
+    font-family: "codePro-Light";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Light.ttf');
+}
+@font-face {
+    font-family: "codePro-LightItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-LightItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Medium";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Medium.ttf');
+}
+@font-face {
+    font-family: "codePro-MediumItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-MediumItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Regular";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Regular.ttf');
+}
+@font-face {
+    font-family: "codePro-SemiBold";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf');
+}
+@font-face {
+    font-family: "codePro-SemiBoldItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-SemiBoldItalic.ttf');
+}
+
+
 /* Personal CSS */
 
 .text-center {
@@ -74,8 +133,113 @@
     color: red;
 }
 
+ion-toolbar, ion-toolbar > ion-label, ion-toolbar > ion-card-title, ion-toolbar > ion-title, ion-toolbar > ion-buttons > ion-button {
+    font-family: codePro-BoldItalic !important;
+}
 
-// font-size
+ion-header {
+    border: none;
+    ion-toolbar {
+        border: none;
+    }
+}
+
+ion-header {
+    ion-toolbar, ion-title {
+        ion-title, ion-label {
+            font-size: 15px;
+        }
+        ion-buttons {
+            ion-button {
+                font-size: 12px;
+                ion-icon {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.menu-title, .slogan {
+    font-family: codePro-Italic !important;
+}
+
+.menu-title {
+    font-size: 13px !important;
+}
+
+ion-card-title, ion-card-content, ion-card-subtitle, ion-item, ion-label, h1, h2, h3, h4, h5, h6, p {
+    font-family: codePro-Regular;
+}
+
+.slogan {
+    font-size: 10px;
+}
+
+ion-button {
+    font-style: italic;
+}
+
+/* font */
+
+.ft_bold {
+    font-family: codePro-Bold !important;
+}
+
+.ft_boldItalic {
+    font-family: codePro-BoldItalic !important;
+}
+
+.ft_semiBold {
+    font-family: codePro-semiBoldItalic !important;
+}
+
+.ft_semiBoldItalic {
+    font-family: codePro-semiBoldItalic !important;
+}
+
+.ft_black {
+    font-family: codePro-Black !important;
+}
+
+.ft_blackItalic {
+    font-family: codePro-BlackItalic !important;
+}
+
+.ft_medium {
+    font-family: codePro-Medium !important;
+}
+
+.ft_mediumItalic {
+    font-family: codePro-MediumItalic !important;
+}
+
+.ft_extraLight {
+    font-family: codePro-ExtraLight !important;
+}
+
+.ft_extraLightItalic {
+    font-family: codePro-ExtraLightItalic !important;
+}
+
+.ft_light {
+    font-family: codePro-Light !important;
+}
+
+.ft_lightItalic {
+    font-family: codePro-LightItalic !important;
+}
+
+.ft_regular {
+    font-family: codePro-Regular !important;
+}
+
+.ft_italic {
+    font-family: codePro-Italic !important;
+}
+
+
+/* special font-size */
 
 .fs-10 {
     font-size: 10px;

@@ -10,7 +10,7 @@
   <ion-list #activityList [hidden]="!showActivity">
     <ion-item-group *ngFor="let program of programs">
       <ion-item-divider sticky>
-        <ion-label>
+        <ion-label class="ft_regular">
           {{dateParser.parseToLocalFr(dateParser.getFormattedDate(program.date), 'short')}}
         </ion-label>
       </ion-item-divider>
