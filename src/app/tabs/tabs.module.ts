@@ -12,6 +12,7 @@ import { Tab2PageModule } from '../tab2/tab2.module';
 import { Tab3PageModule } from '../tab3/tab3.module';
 import { ActualityPageModule } from '../actuality/actuality.module';
 import { NewsPageModule } from '../news/news.module';
+import { VisualizePageModule } from '../visualize/visualize.module';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { NewsPageModule } from '../news/news.module';
     Tab3PageModule,
     ActualityPageModule,
     NewsPageModule,
+    VisualizePageModule,
     TabsPageRoutingModule
   ],
   declarations: [TabsPage]

@@ -30,7 +30,11 @@ const routes: Routes = [
           {
             path: '',
             component: Tab2Page
-          }
+          },
+          {
+            path: 'visualize/:contentRef',
+            loadChildren: () => import('../visualize/visualize.module').then( m => m.VisualizePageModule)
+          },
         ]
       },
       {
