@@ -1,4 +1,12 @@
 <ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Programme de la semaine</ion-title>
+    </ion-toolbar>
+  </ion-header>
   <ion-list #activityList [hidden]="!showActivity">
     <ion-item-group *ngFor="let program of programs">
       <ion-item-divider sticky>
