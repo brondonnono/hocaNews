@@ -20,7 +20,7 @@ export class VisualizePage {
   ionViewWillEnter() {
     this.contentRef = this.route.snapshot.paramMap.get('contentRef');
     if (this.contentRef != null) this.data = this.getData(this.contentRef);
-    else this.router.navigate(['/tab1']);
+    else this.router.navigate(['/tab2']);
   }
 
   getData(contentRef: string) { }
