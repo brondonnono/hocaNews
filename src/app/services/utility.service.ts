@@ -32,19 +32,19 @@ export class UtilityService {
   getNewDataSize(type: string) {
     switch (type) {
       case "Program":
-        return 1;
+        return 4;
         break;
 
       case "Profil":
-        return 2;
+        return 1;
         break;
 
       case "Actus":
-        return 3;
+        return 4;
         break;
 
       case "States":
-        return 4;
+        return 5;
         break;
     }
     return -1;
