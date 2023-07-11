@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-about-us',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsPage implements OnInit {
 
+  @ViewChild('mainSlides', { static: false }) mainSlides!: IonSlides;
+
+  mainSlideOpts = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    speed: 5000,
+  };
   constructor() { }
 
   ngOnInit() {
