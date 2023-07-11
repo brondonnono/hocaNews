@@ -19,52 +19,37 @@ export class TabsPage {
   newStatesNumber: number = 0;
 
   constructor(private utilityService: UtilityService) {
-    for (const type in ["Program", "Profil", "Actus", "States"]) {
-      let value = this.utilityService.checkIsExistNewData(type);
-      if (value != 0) {
-        switch (type) {
-          case "Program":
-            this.isNewProgram = true;
-            this.newProgramNumber = value;
-            break;
+    this.newProgramNumber = this.utilityService.checkIsExistNewData("Program");
+    this.newProfilNumber = this.utilityService.checkIsExistNewData("Profil");
+    this.newActusNumber = this.utilityService.checkIsExistNewData("Actus");
+    this.newStatesNumber = this.utilityService.checkIsExistNewData("States");
 
-          case "Profil":
-            this.isNewProfil = true;
-            this.newProfilNumber = value;
-            break;
+    if(this.newProgramNumber <= 0) {
+      this.isNewProgram = false;
+      console.log(this.isNewProgram);
+    } else {
+      this.isNewProgram = true;
+    }
 
-          case "Actus":
-            this.isNewActus = true;
-            this.newActusNumber = value;
-            break;
+    if(this.newProfilNumber == 0) {
+      this.isNewProfil = false;
+      console.log(this.isNewProfil);
+    } else {
+      this.isNewProfil = true;
+    }
 
-          case "States":
-            this.isNewStates = true;
-            this.newStatesNumber = value;
-            break;
-        }
-      } else {
-        switch (type) {
-          case "Program":
-            this.isNewProgram = false;
-            break;
+    if(this.newActusNumber == 0) {
+      this.isNewActus = false;
+      console.log(this.isNewActus);
+    } else {
+      this.isNewActus = true;
+    }
 
-          case "Profil":
-            this.isNewProfil = false;
-            break;
-
-          case "Actus":
-            this.isNewActus = false;
-            break;
-
-          case "States":
-            this.isNewStates = false;
-            break;
-
-          default:
-            break;
-        }
-      }
+    if(this.newStatesNumber == 0) {
+      this.isNewStates = false;
+      console.log(this.isNewStates);
+    } else {
+      this.isNewStates = true;
     }
   }
 
