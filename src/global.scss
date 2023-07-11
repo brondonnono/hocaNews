@@ -93,6 +93,10 @@
     justify-content: center;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 .pt-1 {
     padding-top: 0.5rem;
 }
@@ -107,6 +111,26 @@
 
 .mt-5 {
     margin-top: 2.5rem;
+}
+
+.pb-1 {
+    padding-bottom: 0.5rem;
+}
+
+.pb-5 {
+    padding-bottom: 2.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 2.5rem;
+}
+
+.bottom_line {
+    border-bottom: 1px solid black;
 }
 
 .text-green {
@@ -168,7 +192,7 @@ ion-header {
     font-size: 13px !important;
 }
 
-ion-card-title, ion-card-content, ion-card-subtitle, ion-item, ion-label, h1, h2, h3, h4, h5, h6, p {
+ion-card-title, ion-card-content, ion-card-subtitle, ion-title, ion-item, ion-label, h1, h2, h3, h4, h5, h6, p {
     font-family: codePro-Regular;
 }
 

@@ -8,4 +8,43 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-slides #mainSlides loop="true" [options]="mainSlideOpts">
+    <ion-slide>
+      <ion-img src="assets/placeholder.png"></ion-img>
+      <ion-title>Title 1</ion-title>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/placeholder.png"></ion-img>
+      <ion-title>Title 2</ion-title>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/placeholder.png"></ion-img>
+      <ion-title>Title 3</ion-title>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ion-padding text-justify ft_regular">
+    <ion-text>
+      Description de l'application, parler de nous.
+      Description de l'application, parler de nous.
+      Description de l'application, parler de nous.
+    </ion-text>
+  </div>
+  <ion-title class="text-center">Réalisé par</ion-title>
+  <hr>
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="text-center">
+          <ion-card-header>
+              <img class="profil-img" src="assets/placeholder.png">
+          </ion-card-header>
+          <ion-card-content>
+            <h4>Brondon NONO</h4>
+            <h5 class="ft_semibold">Développeur Web et Mobile</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
