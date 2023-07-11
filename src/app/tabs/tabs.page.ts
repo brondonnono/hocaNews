@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  isNewProgram: boolean = false;
+  isNewActus: boolean = false;
+  isNewStates: boolean = false;
+  isNewProfil: boolean = false;
+
   constructor() {}
 
 }
