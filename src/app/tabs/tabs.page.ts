@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilityService } from '../services/utility.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,49 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  isNewProgram: boolean = false;
+  isNewActus: boolean = false;
+  isNewStates: boolean = false;
+  isNewProfil: boolean = false;
+
+  newProgramNumber: number = 0;
+  newActusNumber: number = 0;
+  newProfilNumber: number = 0;
+  newStatesNumber: number = 0;
+
+  constructor(private utilityService: UtilityService) {
+    this.newProgramNumber = this.utilityService.checkIsExistNewData("Program");
+    this.newProfilNumber = this.utilityService.checkIsExistNewData("Profil");
+    this.newActusNumber = this.utilityService.checkIsExistNewData("Actus");
+    this.newStatesNumber = this.utilityService.checkIsExistNewData("States");
+
+    if(this.newProgramNumber <= 0) {
+      this.isNewProgram = false;
+      console.log(this.isNewProgram);
+    } else {
+      this.isNewProgram = true;
+    }
+
+    if(this.newProfilNumber == 0) {
+      this.isNewProfil = false;
+      console.log(this.isNewProfil);
+    } else {
+      this.isNewProfil = true;
+    }
+
+    if(this.newActusNumber == 0) {
+      this.isNewActus = false;
+      console.log(this.isNewActus);
+    } else {
+      this.isNewActus = true;
+    }
+
+    if(this.newStatesNumber == 0) {
+      this.isNewStates = false;
+      console.log(this.isNewStates);
+    } else {
+      this.isNewStates = true;
+    }
+  }
 
 }
