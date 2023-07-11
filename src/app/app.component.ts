@@ -19,7 +19,7 @@ export class AppComponent {
       { title: 'Actualités', url: '/app/tabs/news', icon: 'newspaper' },
       { title: 'Mes états', url: '/app/tabs/tab2', icon: 'bar-chart' },
       { title: 'Statut de l\'association', url: '/status', icon: 'journal' },
-      { title: 'A propos', url: '/about', icon: 'information-circle' },
+      { title: 'A propos', url: '/about-us', icon: 'information-circle' },
     ];
   }
 }
