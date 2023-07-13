@@ -16,11 +16,11 @@
         <ion-item *ngFor="let tontine of memberCotisations">
             <h6>{{tontine.title}} : N°{{getMemberPosition(memberData.id, tontine)}}</h6> &nbsp;
             <ion-label color="success" class="bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'Reçu'">({{hasReceive(memberData.id, tontine)}})</ion-label>
-            <ion-label color="danger" class="bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'En attente'">({{hasReceive(memberData.id, tontine)}})</ion-label>
+            <ion-label color="primary" class="bold italic" *ngIf="hasReceive(memberData.id, tontine) === 'En attente'">({{hasReceive(memberData.id, tontine)}})</ion-label>
         </ion-item>
     </ion-list>
 
-    <ion-button class="mt-5" mode="ios" color="danger" expand="block" shape="round" (click)="logout()">
+    <ion-button class="mt-5" mode="ios" color="primary" expand="block" shape="round" (click)="logout()">
         <ion-icon name="log-out" slot="start"></ion-icon>
         <label>Déconnexion</label>
     </ion-button>
