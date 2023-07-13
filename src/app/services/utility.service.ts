@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
+import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilityService {
 
-  constructor() { }
+  constructor(
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
+    private alertCtrl: AlertController
+  ) { }
 
   checkIsExistNewData(type: string) {
     let result: number;
@@ -48,5 +53,42 @@ export class UtilityService {
         break;
     }
     return -1;
+  }
+
+  async loading() {
+    const load = await this.loadingCtrl.create({
+      message: 'Patientez...',
+      mode: 'ios',
+      spinner: 'circular'
+    });
+    await load.present();
+  }
+
+  async dismiss() {
+    this.loadingCtrl.dismiss();
+  }
+
+  async presentToastMessage(message: string) {
+    const toast = await this.toastCtrl.create({
+      header: message,
+      position: 'top',
+      duration: 5000,
+      buttons: [{
+        text: 'fermer',
+        role: 'cancel'
+      }]
+    });
+
+    // Present the toast at the top of the page
+    await toast.present();
+  }
+
+  async presentAlertMessage(message: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Informations',
+      message: message,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 }
