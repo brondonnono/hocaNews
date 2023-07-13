@@ -1,0 +1,115 @@
+npm i @ionic/angular/lastest
+npm i swiper@lastest
+
+Now we need to call Swiper's register function 
+to globally register Swiper's custom elements. 
+This should only be done once, 
+so place it in app.component.ts
+
+example:
+    import { register } from 'swiper/element/bundle';
+
+    register();
+
+
+From there, we just have to replace
+ion-slides elements with swiper-container
+and ion-slide elements with swiper-slide.
+Note that these custom elements do not
+need to be imported, as calling register 
+tells Angular about them on its own.
+
+<swiper-container>
+    <swiper-slide> Slide 1</swiper-slide>
+    <swiper-slide> Slide 2</swiper-slide>
+    <swiper-slide> Slide 3</swiper-slide>
+</swiper-container>
+
+
+to change the color of active progress bullet use:
+--swiper-pagination-color
+to change the color of inactive progress bullet use:
+--swiper-pagination-bullet-inactive-color
+
+
+custom style to add in global.css:
+
+swiper-container {
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-orange);
+    --swiper-pagination-color: var(--ion-color-red);
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+}
+
+swiper-slide {
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 18px;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+We can install the IonicSlides module by importing it
+from @ionic/angular and passing it to the modules property
+of swiper-container as an array:
+
+// page where we have the swiper slide >>>>.ts
+
+import { IonicSlides } from '@ionic/angular';
+
+export class ..... {
+    swiperModules = [IonicSlides];
+    .....
+}
+
+// page where we have the swiper slide >>>>.html
+<swiper-container [modules]="swiperModules">...</swiper-container>
+
+// to set the options we can do it directly in the swiper-container
+<swiper-container [slidesPerView]="..." [loop]="true|false">...</swiper-container>
+
+// to call a function if slide change use: (slideChange)="function()" in swiper-container
+
+// to do an action when the last slide have be reached use this code in the page where we have the swiper slide >>>>.ts
+import { ElementRef, ViewChild } from '@angular/core';
+
+export class ... {
+    @ViewChild('swiper) swiperRef: ElementRef | undefined;
+
+    actionWhenLast() {
+        let isEnd = this.swiperRef?.nativeElement.swiper.isEnd;
+        if(isEnd == true) {
+            ...
+        } else {
+            ...
+        }
+    }
+}
+
+// to add effect on the swiper add effect="flip|coverflow|cube|cards|creative"
+
+// to permit to do zoom in swiper image add this:
+<div class="swiper-zoom-container"></div> before adding the <ion-img> </ion-img> or <img/>
+
+// or use this:
+<div class="swiper-zoom-container">
+    <div class="swiper-zoom-target" style="background-image: url(...)"></div>
+</div> with max-ratio=3 minRatio=1 toggle=Enable
