@@ -9,6 +9,7 @@ import { News } from '../models/models';
 export class NewsPage implements OnInit {
 
   actualities: News[] = [];
+  public searchValue = '';
 
   constructor() { }
 
@@ -64,6 +65,16 @@ export class NewsPage implements OnInit {
       },
     ];
     return actualities_tmp;
+  }
+
+  public quickSearch(ev: any): void {
+    this.actualities = this.getActualities();
+    const val = ev.target.value;
+    if (val && val.trim() != '') {
+      this.actualities = this.actualities.filter((actus) => {
+        return (actus?.title.toLowerCase().indexOf(val.toLowerCase()) > -1)
+      });
+    }
   }
 
 }

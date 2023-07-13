@@ -7,7 +7,7 @@
             <ion-title>Actualités</ion-title>
         </ion-toolbar>
     </ion-header>
-    <ion-searchbar class="ft_lightItalic pb-0" placeholder="Rechercher" type="text" debounce="500" enterkeyhint="search"></ion-searchbar>
+    <ion-searchbar class="ft_lightItalic pb-0" placeholder="Rechercher" type="text" (ionInput)="quickSearch($event)" [(ngModel)]="searchValue" name="search" debounce="500" enterkeyhint="search"></ion-searchbar>
     <ion-grid *ngIf="actualities.length > 0">
         <ion-row>
             <ion-col size="6" *ngFor="let actuality of actualities"
