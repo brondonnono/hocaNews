@@ -1,9 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content mode="ios">
+  <div class="header">
+    <div class="logo">
+      <img src="assets/logo_t.png">
+    </div>
+    <h3 class="slogan">Garder toujours un oeil sur votre tontine</h3>
+  </div>
+  <form #login="ngForm" class="form" novalidate>
+    <ion-item mode="ios" lines="none">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-input type="text" name="username" required placeholder="Nom d'utilisateur"></ion-input>
+    </ion-item>
 
-<ion-content>
+    <!-- <ion-text color="warning" class="error-message">
+      <span [hidden]="email.valid || submitted == false" class="ion-padding-start">
+        L'adresse email est requise
+      </span>
+      <span [hidden]="!errorMessages.email" class="ion-padding-start">
+        {{ errorMessages?.email }}
+      </span>
+    </ion-text> -->
+
+    <ion-item mode="ios" lines="none">
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-input [(ngModel)]="credentials.password" name="password" type="{{ getType() }}" #password="ngModel" required placeholder="Mot de passe" inputmode="text"></ion-input>
+      <ion-icon mode='ios' name='eye-off' slot="end" *ngIf="eyeMode ==='close'" (click)='showPassword()'></ion-icon>
+      <ion-icon mode='ios' name='eye' slot="end" *ngIf="eyeMode ==='open'" (click)='showPassword()'></ion-icon>
+    </ion-item>
+
+    <ion-text color="warning" class="error-message">
+      <!-- <span [hidden]="password.valid || submitted == false" class="ion-padding-start">
+        Votre mot de passe est requis
+      </span> -->
+      <!-- <span [hidden]="!errorMessages.password" class="ion-padding-start">
+        {{ errorMessages?.password }}
+      </span> -->
+    </ion-text>
+  </form>
+  <div class="forgot">
+    <h3>
+      <a routerLink="/forgot">
+        Mot de passe oublié?
+      </a>
+    </h3>
+  </div>
+
+  <div class="button">
+    Connexion
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </div>
+
+  <div class="footer">
+    <h3>Pas encore de compte?</h3>
+  </div>
+
+  <div class="footer2">
+    <div></div>
+    <div class="button-right" routerLink="/signup">
+      <ion-icon name="log-out"></ion-icon>
+      Inscrivez-vous
+    </div>
+  </div>
+
+  <ion-footer>
+  
+  </ion-footer>
 
 </ion-content>
