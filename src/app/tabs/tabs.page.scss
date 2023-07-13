@@ -5,3 +5,11 @@ ion-label {
 .tab-selected {
     color: var(--ion-color-red);
 }
+
+ion-tab-bar {
+    background: white !important;
+}
+
+ion-tab-button {
+    background: transparent !important;
+}
