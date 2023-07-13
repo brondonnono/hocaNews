@@ -8,3 +8,10 @@ ion-list-header {
     font-family: codePro-Regular !important;
 }
 
+ion-content {
+    --background: url('../../assets/img/profil_bg.png');
+}
+
+ion-list {
+    border-radius: 15%;
+}

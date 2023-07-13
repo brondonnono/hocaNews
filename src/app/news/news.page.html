@@ -14,7 +14,7 @@
                 routerLink="/app/tabs/news/actuality/{{actuality.id}}">
                 <ion-card mode="ios">
                     <ion-card-header>
-                        <ion-img src="assets/icon/favicon.png" title="Actualite image" alt="Actualite image"></ion-img>
+                        <ion-img [src]="actuality.img" title="Actualite image" alt="Actualite image"></ion-img>
                     </ion-card-header>
                     <ion-card-content>
                         <p>{{actuality.title.substr(0, 15).concat('...')}}</p>

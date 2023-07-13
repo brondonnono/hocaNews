@@ -30,7 +30,7 @@ export class ActualityPage {
         id: actualityId,
         title: 'Ton projet n\'avance plus faute de moyen? Contact nous',
         endDate: '07/26/2023',
-        img: '',
+        img: 'assets/img/new_actu.png',
         description: 'Programme de subvention pour les microprojets au Cameroun dirigé par la CCAM (CELLULE DR COORDINATION ET APPUI AU MICRPROJET)',
         organisation_code: 'All',
         initiator_user_id: '1',
