@@ -26,28 +26,24 @@ export class TabsPage {
 
     if(this.newProgramNumber <= 0) {
       this.isNewProgram = false;
-      console.log(this.isNewProgram);
     } else {
       this.isNewProgram = true;
     }
 
     if(this.newProfilNumber == 0) {
       this.isNewProfil = false;
-      console.log(this.isNewProfil);
     } else {
       this.isNewProfil = true;
     }
 
     if(this.newActusNumber == 0) {
       this.isNewActus = false;
-      console.log(this.isNewActus);
     } else {
       this.isNewActus = true;
     }
 
     if(this.newStatesNumber == 0) {
       this.isNewStates = false;
-      console.log(this.isNewStates);
     } else {
       this.isNewStates = true;
     }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Cotisation, Member } from '../models/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -12,7 +13,9 @@ export class Tab3Page {
   userId: any = '1';
   memberCotisations: any;
   
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.getMemberData();
   }
 
@@ -99,6 +102,7 @@ export class Tab3Page {
   }
 
   logout() {
+    this.router.navigate(['/login']);
   }
 
   hasReceive(memberId: string, cotisation: Cotisation) {
@@ -110,7 +114,6 @@ export class Tab3Page {
         res = 'Reçu';
       else res = 'En attente';
     } else res = ''; 
-    console.log('res = ', res, 'memberPosition = ', this.getMemberPosition(memberId, cotisation), 'currentPosition = ', cotisation.currentPosition);
     return res;
   }
 }
