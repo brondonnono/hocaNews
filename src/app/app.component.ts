@@ -15,7 +15,7 @@ export class AppComponent {
 
   public setMenuItem(): any[] {
     return this.appPages = [
-      { title: 'Programme', url: '/app/tabs/tab1', icon: 'calendar' },
+      { title: 'Programme de la semaine', url: '/app/tabs/tab1', icon: 'calendar' },
       { title: 'Actualités', url: '/app/tabs/news', icon: 'newspaper' },
       { title: 'Mes états', url: '/app/tabs/tab2', icon: 'bar-chart' },
       { title: 'Statut de l\'association', url: '/status', icon: 'journal' },
