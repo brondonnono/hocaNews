@@ -113,3 +113,7 @@ export class ... {
 <div class="swiper-zoom-container">
     <div class="swiper-zoom-target" style="background-image: url(...)"></div>
 </div> with max-ratio=3 minRatio=1 toggle=Enable
+
+
+trouver un background qui sera adequat pour la page de login et signup
+creer aussi la page de mot de passe oublié
