@@ -8,20 +8,24 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-slides #mainSlides loop="true" [options]="mainSlideOpts">
-    <ion-slide>
-      <ion-img src="assets/placeholder.png"></ion-img>
-      <ion-title>Title 1</ion-title>
-    </ion-slide>
-    <ion-slide>
-      <ion-img src="assets/placeholder.png"></ion-img>
-      <ion-title>Title 2</ion-title>
-    </ion-slide>
-    <ion-slide>
-      <ion-img src="assets/placeholder.png"></ion-img>
-      <ion-title>Title 3</ion-title>
-    </ion-slide>
-  </ion-slides>
+  <swiper-container [modules]="swiperModules" #swiper [autoplay]="autoplay" [pagination]="true" [slidesPerView]="1"
+    [loop]="true" effect="coverflow">
+    <swiper-slide>
+      <div class="swiper-zoom-container">
+        <ion-img src="assets/placeholder.png"></ion-img>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="swiper-zoom-container">
+        <ion-img src="assets/profil.png"></ion-img>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="swiper-zoom-container">
+        <ion-img src="assets/logo_t.png"></ion-img>
+      </div>
+    </swiper-slide>
+  </swiper-container>
 
   <ion-list class="ion-padding text-justify ft_regular">
     <ion-item>
@@ -39,7 +43,7 @@
         <ion-col size="6">
           <ion-card class="text-center">
             <ion-card-header>
-                <img class="profil-img" src="assets/profil.png">
+              <img class="profil-img" src="assets/profil.png">
             </ion-card-header>
             <ion-card-content>
               <h4>Brondon NONO</h4>

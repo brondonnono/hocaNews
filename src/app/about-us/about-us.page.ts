@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IonicSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-about-us',
@@ -8,16 +8,20 @@ import { IonSlides } from '@ionic/angular';
 })
 export class AboutUsPage implements OnInit {
 
-  @ViewChild('mainSlides', { static: false }) mainSlides!: IonSlides;
+  @ViewChild('swiper') swiperRef: ElementRef | undefined;
+  swiperModules = [IonicSlides];
 
-  mainSlideOpts = {
-    initialSlide: 0,
-    slidesPerView: 1,
-    speed: 5000,
-  };
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  autoplay = {
+    delay: 7000,
+  };
+
+  actionWhenLast() {
+    let isEnd = this.swiperRef?.nativeElement.swiper.isEnd;
+    if (isEnd == true) { } else { }
   }
 
 }
