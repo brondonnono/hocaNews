@@ -29,7 +29,7 @@
     "@ionic/angular": "^6.1.9",
     "firebase": "^9.16.0",
     "ionicons": "^6.0.3",
-    "rxjs": "~7.5.0",
+    "rxjs": "^7.5.0",
     "swiper": "^10.0.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
